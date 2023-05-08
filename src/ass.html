@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Components Composition</title>
+    <style>
+        /* 页面整体样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 标题样式 */
+        .header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        /* 表单样式 */
+        input[type="text"], button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #000;
+        }
+
+        button {
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            border: none; /* 去掉边框 */
+        }
+
+        /* 结果展示样式 */
+        pre {
+            font-size: 16px;
+            white-space: pre-wrap;
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        /* 表格样式 */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #000;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Assignment 2 – Software Engineering 2</h1>
+    </div>
+
+    <div>
+        year (eg. 2019, 2012) <input type="text" value="" id="year">
+        <br>
+        Country (code, eg. CN, US) <input type="text" value="" id="Countrycode">
+        <br>
+        <button type="button" onclick="getHoliday()">Get Holiday List</button>
+    </div>
+
+    <table id="holidayTable"></table>
+
+    <div>
+        City (eg. Beijing, New York) <input type="text" value="" id="city">
+        <br>
+        <button type="button" onclick="getHotels()">Get Hotel List</button>
+    </div>
+
+    <table id="hotelTable"></table>
+
+
+
+    <div>
+        <br>
+        <button type="button" onclick="getweather()">Get Recent Weather</button>
+
+    </div>
+
+
+    <!-- <pre id="weatherlist">
+
+    </pre> -->
+
+    <!-- <table id="hotelTable"></table> -->
+
+    <table id="weatherTable">
+        <thead>
+            <tr>
+                <th>validTime</th>
+                <th>minTempC</th>
+                <th>maxTempC</th>
+            </tr>
+        </thead>
+        <tbody id="weatherListBody"></tbody>
+    </table>
+
+
+    <script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+    <script src="getHoliday.js"></script>
+    <script src="getApitest.js"></script>
+    <script src="getHotel.js"></script>
+    <script src="getWeather.js"></script>
+</body>
+</html>
